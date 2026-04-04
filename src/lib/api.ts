@@ -1,4 +1,4 @@
-const BASE_URL = 'http://98.84.30.134:8080/api/auth';
+const BASE_URL = '/api/auth';
 
 async function request<T>(path: string, options: RequestInit = {}): Promise<T> {
   const res = await fetch(`${BASE_URL}${path}`, {
