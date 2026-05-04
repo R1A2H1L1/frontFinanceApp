@@ -91,6 +91,7 @@ export default function DashboardPage() {
 
   async function handleTransaccion(e: FormEvent) {
     e.preventDefault();
+    if (!session) return;
     if (txCatId === '') { setTxError('Selecciona una categoría.'); return; }
     if (!txNombre.trim()) { setTxError('Ingresa un nombre para la transacción.'); return; }
     const monto = parseFloat(txMonto);
@@ -135,6 +136,7 @@ export default function DashboardPage() {
   }
 
   async function handlePage(dir: 1 | -1) {
+    if (!session) return;
     const next = histPage + dir;
     if (next < 0 || (historial && next >= historial.totalPaginas)) return;
     setHistLoading(true);
