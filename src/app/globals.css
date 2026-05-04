@@ -677,6 +677,177 @@ body {
 .strength-segment.active-3 { background: var(--gold); }
 .strength-segment.active-4 { background: var(--green-light); }
 
+/* ── Select field ── */
+select.field-input {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 6l4 4 4-4' stroke='%234a4844' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.875rem center;
+  background-size: 16px;
+  padding-right: 2.5rem;
+  cursor: pointer;
+}
+
+select.field-input option,
+select.field-input optgroup {
+  background: var(--bg-elevated);
+  color: var(--text);
+}
+
+/* ── Form row (2-col) ── */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 600px) {
+  .form-row { grid-template-columns: 1fr; }
+}
+
+/* ── Tipo badge ── */
+.tipo-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.tipo-badge--ingreso {
+  background: rgba(74,140,106,0.15);
+  color: var(--green-light);
+  border: 1px solid rgba(74,140,106,0.3);
+}
+
+.tipo-badge--gasto {
+  background: rgba(154,74,74,0.12);
+  color: var(--red-light);
+  border: 1px solid rgba(154,74,74,0.3);
+}
+
+/* ── Transactions section ── */
+.tx-section-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 2.5rem 0;
+}
+
+.tx-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 600px) {
+  .tx-stats { grid-template-columns: 1fr; }
+}
+
+.tx-stat {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+}
+
+.tx-stat-label {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.tx-stat-value {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1;
+}
+
+.tx-stat-value--ingreso { color: var(--green-light); }
+.tx-stat-value--gasto   { color: var(--red-light); }
+
+/* ── Transaction list ── */
+.tx-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.tx-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.875rem 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.tx-item:last-child { border-bottom: none; }
+
+.tx-icon {
+  width: 38px;
+  height: 38px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  display: grid;
+  place-items: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.tx-info { flex: 1; min-width: 0; }
+
+.tx-name {
+  font-size: 0.875rem;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 0.15rem;
+}
+
+.tx-meta {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--text-dim);
+  letter-spacing: 0.04em;
+}
+
+.tx-amount {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.tx-amount--ingreso { color: var(--green-light); }
+.tx-amount--gasto   { color: var(--red-light); }
+
+/* ── Pagination ── */
+.tx-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+  margin-top: 0.25rem;
+}
+
+.tx-page-info {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--text-dim);
+  letter-spacing: 0.1em;
+}
+
 /* ── Responsive ── */
 @media (max-width: 480px) {
   .auth-panel--form { padding: 2rem 1.25rem; }
