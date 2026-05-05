@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-const API_BASE = 'http://3.83.185.53:8080/api/auth';
+const API_BASE = 'http://34.239.161.129:8080/api/auth';
 
 async function handler(req: NextRequest, { params }: { params: { path: string[] } }) {
   const path = params.path.join('/');
